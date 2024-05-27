@@ -74,7 +74,7 @@ After merging all lists and removing duplicates, the total list was reduced to 5
 3. Created a deduplicated list of ‘from_addr’ in a ‘wallets.xlsx’ file.
 4. Removed wallets that have been found in the provided by LayerZero blacklist.
 5. Added a column ‘transactions’ and filled it with transaction counts from the provided snapshot for each wallet.
-6. Added a column 'balance' by scraping wallet balances in USD across all blockchains from DeBank using Octoparse.
+6. Added a column 'balance' by scraping wallet balances in USD across all blockchains from DeBank using Octoparse. 
 7. Added a column 'interacted projects' and listed all swap-type projects that wallets have interacted with, separated by commas.
 8. Added a column 'wallet label' by scraping wallet labels from Arkham Intelligence using Octoparse to reveal address identities.
 9. Added a column ‘software interactions’, showing the number of wallet interactions with the referral address through the software on all blockchains, which confirms repeated activity of Sybil wallets. Please note that it doesn’t show the full amount of software interactions, as it’s limited to projects where referral address was used.
@@ -83,7 +83,7 @@ After merging all lists and removing duplicates, the total list was reduced to 5
 12. In total, the following filters were applied:
 	- 'transactions' > 0 - removes wallets that haven't interacted with LayerZero
 	- 'blacklist' = 'none' - removes wallets that have been marked as Sybils by LayerZero   
-	- 'actions' = 'safeMint', 'mint', 'swap', 'swapCompact', ‘onChainSwaps', ‘0’ (optional), ‘blank’ (optional) - filters out ‘iRelay’, ‘multicall’, ‘airdrop’, etc.
+	- 'actions' = 'safeMint', 'mint', 'swap', 'swapCompact', ‘onChainSwaps', ‘0’ (optional), ‘blank’ (optional) - filters out ‘relay’, ‘multicall’, ‘airdrop’, etc.
 13. Identified:
 	- 45,404 Sybil wallets from CZBag
 	- 9,383 Sybil wallets from RealAskaer
@@ -91,7 +91,7 @@ After merging all lists and removing duplicates, the total list was reduced to 5
 	- 473 Sybil wallets from Rgalyeon
 	- 50 Sybil wallet from 3asyPe
 14. Additionally, to validate the high quality of this research:
-	- A manual review of DeBank's transaction history was conducted on referral addresses and a portion of the identified addresses with different sets of actions to validate results.
+	- A manual review of DeBank's transaction history was conducted on referral addresses and a portion of the identified addresses with different sets of actions to validate results. 
 	- Actions '0' (54 wallets) and 'blank' (4,579 wallets) are optional, as specified in point 12. They have been added due to the high number of software interactions. '0' actions are from interactions on the Scroll blockchain from software #5, while all 'blank' are from swap-type actions on 'xyfinance.'
 	- A deep analysis of 'interacted projects' data proved that there are no P2P transactions involved in swap-type actions. This is because the majority of wallets have interacted with multiple projects (non-referrals wouldn’t be able to do so), and even if they have interacted with only one project, they have multiple software interactions and low wallet balances. However, if LayerZero insists, swap-type actions can either be filtered out completely, or the minimum number of software interactions required for them to be shortlisted can be increased. For this purpose, an ‘action_filter.py’ script was developed that works based on the number of software interactions entered in the 'action_filter' tab of ‘full_data.xlsx’. After setting values and launching the script, wallets will be filtered based on the set threshold of software interactions for each action. Mint-type actions can have at least 1 interaction, while for swap-type actions, it can be set to 2-3.
 	- An additional analysis of ‘software interactions’ data was conducted to evaluate how intensely software was used and how filtered list will be reduced if we count:
@@ -105,10 +105,13 @@ After merging all lists and removing duplicates, the total list was reduced to 5
 	- 99% of Sybil wallets were extracted from addresses used solely as referral addresses in the Sybil software (others were meticulously filtered out), which simplifies analysis, maximizes accuracy, and excludes all non-Sybil users.
 
 A full list of 52,676 wallets will be provided in the file 'full_data.xlsx' so that the LayerZero team can apply filters based on the provided options, such as filtering by different 'action' parameters, 'balance,' ‘software interactions,’ or by adding their own data points. Please make the final decision on how they should be filtered out based on your conclusions from the provided information.
-
+	
 My suggestion is to mark 52,621 wallets from 'reported_addresses.csv' as Sybils. However, this is the maximum number that can be added based on the done research, and it can be decreased if LayerZero finds it appropriate.
 
-All files: https://mega.nz/folder/d6cmCC4a#-NItXmRJqGYZ1zT4TmZ5iA
+MEGA: https://mega.nz/folder/d6cmCC4a#-NItXmRJqGYZ1zT4TmZ5iA
+GitHub: https://github.com/vantablack-suit/sybil-report
+
+P.S. This was my first report https://github.com/LayerZero-Labs/sybil-report/issues/151, which I have drastically improved. My https://github.com/vantablack account was reported by Sybils and suspended, so I have created a new one.
 
 # Reward Address (If Eligible)
 
