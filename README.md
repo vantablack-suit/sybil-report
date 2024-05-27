@@ -108,8 +108,9 @@ A full list of 52,676 wallets will be provided in the file 'full_data.xlsx' so t
 	
 My suggestion is to mark 52,621 wallets from 'reported_addresses.csv' as Sybils. However, this is the maximum number that can be added based on the done research, and it can be decreased if LayerZero finds it appropriate.
 
-MEGA: https://mega.nz/folder/d6cmCC4a#-NItXmRJqGYZ1zT4TmZ5iA
-GitHub: https://github.com/vantablack-suit/sybil-report
+All files you can find here:
+- MEGA: https://mega.nz/folder/d6cmCC4a#-NItXmRJqGYZ1zT4TmZ5iA
+- GitHub: https://github.com/vantablack-suit/sybil-report
 
 P.S. This was my first report https://github.com/LayerZero-Labs/sybil-report/issues/151, which I have drastically improved. My https://github.com/vantablack account was reported by Sybils and suspended, so I have created a new one.
 
