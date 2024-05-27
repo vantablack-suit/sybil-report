@@ -112,7 +112,7 @@ All files you can find here:
 - MEGA: https://mega.nz/folder/d6cmCC4a#-NItXmRJqGYZ1zT4TmZ5iA
 - GitHub: https://github.com/vantablack-suit/sybil-report
 
-P.S. This was my first report https://github.com/LayerZero-Labs/sybil-report/issues/151, which I have drastically improved. My https://github.com/vantablack account was reported by Sybils and suspended, so I have created a new one.
+P.S. This was my first report https://github.com/LayerZero-Labs/sybil-report/issues/151, which I have drastically improved. My https://github.com/vantablacksuit account was reported by Sybils and suspended, so I have created a new one.
 
 # Reward Address (If Eligible)
 
